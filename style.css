@@ -12,3 +12,21 @@ h1 {
     color: #9932cc
 }
 
+#play-space {
+    border: black solid 2px;
+    overflow: hidden;
+}
+
+.square {
+    width: 5em;
+    height: 5em;
+    float: left;
+    border: black solid 1px;
+    background-color: turquoise;
+    cursor: crosshair;
+}
+
+.square:hover {
+    background-color: #cd5c5c;
+    color: #d3d3d3;
+}
