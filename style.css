@@ -1,4 +1,4 @@
-body {
+body.light-mode {
     position: absolute;
     text-align: center;
     top: 50%;
@@ -8,29 +8,89 @@ body {
     box-shadow: black 0 0 10px;
 }
 
-h1 {
+h1.light-mode {
     color: #9932cc
 }
 
-#play-space {
-    border: black solid 2px;
-    overflow: hidden;
+#status.light-mode {
+    color: #006400;
 }
 
-.square {
+#play-space.light-mode {
+    border: black solid 2px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.square.light-mode {
     width: 5em;
     height: 5em;
     float: left;
     border: black solid 1px;
     background-color: turquoise;
-    cursor: crosshair;
+    cursor: pointer;
 }
 
-.square:hover {
+.square.light-mode:hover{
     background-color: #cd5c5c;
     color: #d3d3d3;
 }
 
-#status {
-    color: #006400;
+.square.clicked.light-mode {
+    background-color: #cc0000;
+    color: #ffffff;
+}
+
+#play-again.light-mode {
+    box-shadow: #000000 0 0 5px;
+    margin: auto;
+    display: none;
+}
+
+body.dark-mode {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    box-shadow: #ffffff 0 0 10px;
+    background: #000000;
+}
+
+h1.dark-mode {
+    color: #ffffff;
+}
+
+#status.dark-mode {
+    color: #0000cc;
+}
+
+#play-space.dark-mode {
+    border: #ffffff solid 2px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.square.dark-mode {
+    width: 5em;
+    height: 5em;
+    float: left;
+    border: #ffffff solid 1px;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.square.dark-mode:hover {
+    background-color: #d3d3d3;
+    color: #ffffff;
+}
+
+#play-again.dark-mode {
+    box-shadow: #000000 0 0 5px;
+    margin: auto;
+    display: none;
 }
