@@ -28,6 +28,18 @@ class XOSquare {
         this.button.innerText = "";
     }
 }
+
+function switchChr() {
+    const statusLabel = document.getElementById("status")
+    if (currentChr === "X") {
+        currentChr = "O";
+        statusLabel.innerText = "O's turn";
+    } else {
+        currentChr = "Xsx";
+        statusLabel.innerText = "X's turn";
+    }
+}
+
 class winningPossibility {
     constructor(x1, y1, x2, y2, x3, y3){
         this.x1 = x1;
@@ -98,22 +110,53 @@ function checkWin(){
     }
 }
 
-function switchChr() {
-    const statusLabel = document.getElementById("status")
-    if (currentChr === "X") {
-        currentChr = "O";
-        statusLabel.innerText = "O's turn";
-    } else {
-        currentChr = "Xsx";
-        statusLabel.innerText = "X's turn";
+function disableGame(){
+    const buttons = getElementsByClassName("square");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
     }
+    const playAgainButton = document.getElementById("play-again");
+    playAgainButton.style.display = "block";
 }
+
+function playAgain(){
+    const buttons = document.getElementsByClassName("square");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+        buttons[i].innerText = "";
+    }
+    XPoint = [];
+    OPoint = [];
+    currentChr = "X";
+    const statusLabel = document.getElementById("status");
+    statusLabel.innerText = "X's turn";
+    const playAgainButton = document.getElementById("play-again");
+    playAgainButton.style.display = "none";
+}
+
 function setup() {
     let squares = [];
     let squareElements = document.getElementsByClassName("square");
     for (let i = 0; i < squareElements.length; i++) {
         let square = new XOSquare(i % 3, Math.floor(i / 3), squareElements[i].id);
-        squares.push(square);
     }
 }
 window.onload = setup;
+
+let currentTheme = 'light';
+function switchTheme() {
+    if (currentTheme === 'dark'){
+        document.querySelectorAll('.dark-mode').forEach(function (element) {
+            element.classList.remove('dark-mode');
+            element.classList.add('Light-mode');
+        });
+        currentTheme = 'light';
+    }
+    else {
+        document.querySelectorAll('.light-mode').forEach(function (element) {
+            element.classList.remove('light-mode');
+            element.classList.add('dark-mode');
+        });
+        currentTheme = 'dark';
+    }
+}
