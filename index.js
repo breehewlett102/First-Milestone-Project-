@@ -39,14 +39,72 @@ class winningPossibility {
     }
 }
 function checkWinningPossibility(winningPossibility, forChr) {
-    let 
+    let p1Satisfied = false;
+    let p2Satisfied = false;
+    let p3Satisfied = false;
+    if (forChr === 'X') {
+        for (let i = 0; i < XPoint.length; i++) {
+            if (XPoint[i].x === winningPossibility.x1 && XPoint[i].y === winningPossibility.y1) {
+                p1Satisfied = true;
+            }
+            else if (XPoint[i].x === winningPossibility.x2 && XPoint[i].y === winningPossibility.y2) {
+                p2Satisfied = true;
+            }
+            else if (XPoint[i].x === winningPossibility.x3 && XPoint[i].y === winningPossibility.y3) {
+                p3Satisfied = true;
+            }
+        }
+    } else {
+        for (let i = 0; i < OPoint.length; i++) {
+            if (OPoint[i].x === winningPossibility.x1 && OPoint[i].y === winningPossibility.y1) {
+                p1Satisfied = true;
+            }
+            else if (OPoint[i].x === winningPossibility.x2 && OPoint[i].y === winningPossibility.y2) {
+                p2Satisfied = true;
+            }
+            else if (OPoint[i].x === winningPossibility.x3 && OPoint[i].y === winningPossibility.y3) {
+                p3Satisfied = true;
+            }
+        }
+    }
+    return p1Satisfied && p2Satisfied && p3Satisfied;
 }
+const winningPossibility = [
+    new winningPossibility(1, 1, 1, 2, 1, 3),
+    new winningPossibility(2, 1, 2, 2, 2, 3),
+    new winningPossibility(3, 1, 3, 2, 3, 3),
+    new winningPossibility(1, 1, 2, 1, 3, 1),
+    new winningPossibility(1, 2, 2, 2, 3, 2),
+    new winningPossibility(1, 3, 2, 3, 3, 3),
+    new winningPossibility(1, 1, 2, 2, 3, 3),
+    new winningPossibility(3, 1, 2, 2, 1, 3)
+]
+
+function checkWin(){
+    const statusLabel = document.getElementById("status")
+    for (let i = 0; i < winningPossibilities.length; i++) {
+        if (checkWinningPossibility(winningPossibilities[i], 'X')) {
+            console.log("X wins!");
+            return;
+        }
+        if(checkWinningPossibility(winningPossibilities[i], 'O')) {
+            console.log("O wins!");
+            return;
+        }
+    }
+    if (XPoint.length + OPoint.length === 9) {
+        statusLabel.innerText = "Draw";
+        disableGame();
+    }
+}
+
 function switchChr() {
+    const statusLabel = document.getElementById("status")
     if (currentChr === "X") {
         currentChr = "O";
         statusLabel.innerText = "O's turn";
     } else {
-        currentChr = "X";
+        currentChr = "Xsx";
         statusLabel.innerText = "X's turn";
     }
 }
