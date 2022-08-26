@@ -1,4 +1,4 @@
-body.light-mode {
+body {
     position: absolute;
     text-align: center;
     top: 50%;
@@ -8,22 +8,22 @@ body.light-mode {
     box-shadow: black 0 0 10px;
 }
 
-h1.light-mode {
+h1 {
     color: #9932cc
 }
 
-#status.light-mode {
+#status {
     color: #006400;
 }
 
-#play-space.light-mode {
+#play-space {
     border: black solid 2px;
     overflow: hidden;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.square.light-mode {
+.square {
     width: 5em;
     height: 5em;
     float: left;
@@ -32,64 +32,17 @@ h1.light-mode {
     cursor: pointer;
 }
 
-.square.light-mode:hover{
+.square:hover{
     background-color: #cd5c5c;
     color: #d3d3d3;
 }
 
-.square.clicked.light-mode {
+.square.clicked {
     background-color: #cc0000;
     color: #ffffff;
 }
 
-#play-again.light-mode {
-    box-shadow: #000000 0 0 5px;
-    margin: auto;
-    display: none;
-}
-
-body.dark-mode {
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    box-shadow: #ffffff 0 0 10px;
-    background: #000000;
-}
-
-h1.dark-mode {
-    color: #ffffff;
-}
-
-#status.dark-mode {
-    color: #0000cc;
-}
-
-#play-space.dark-mode {
-    border: #ffffff solid 2px;
-    overflow: hidden;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.square.dark-mode {
-    width: 5em;
-    height: 5em;
-    float: left;
-    border: #ffffff solid 1px;
-    background-color: #000000;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.square.dark-mode:hover {
-    background-color: #d3d3d3;
-    color: #ffffff;
-}
-
-#play-again.dark-mode {
+#play-again {
     box-shadow: #000000 0 0 5px;
     margin: auto;
     display: none;
