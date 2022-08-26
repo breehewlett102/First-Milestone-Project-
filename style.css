@@ -1,49 +1,83 @@
-body {
-    position: absolute;
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Itam', cursive;
+}
+
+.background {
+    background-color: #12181b;
+    height: 100vh;
+    padding-top: 1px;
+}
+
+.title {
+    color: white;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    box-shadow: black 0 0 10px;
+    font-size: 30px;
+    margin-top: 10%;
 }
 
-h1 {
-    color: #9932cc
+.display {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-#status {
-    color: #006400;
+.hide {
+    display: none;
 }
 
-#play-space {
-    border: black solid 2px;
-    overflow: hidden;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    max-width: 300px;
 }
 
-.square {
-    width: 5em;
-    height: 5em;
-    float: left;
-    border: black solid 1px;
-    background-color: turquoise;
+.tile {
+    border: 1px solid white;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
     cursor: pointer;
 }
 
-.square:hover{
-    background-color: #cd5c5c;
-    color: #d3d3d3;
+.playerX {
+    color: #09c372
 }
 
-.square.clicked {
-    background-color: #cc0000;
-    color: #ffffff;
+.playerO {
+    color: #498afb;
 }
 
-#play-again {
-    box-shadow: #000000 0 0 5px;
-    margin: auto;
-    display: none;
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.controls button {
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.restart {
+    background-color: #498afb;
+}
+
+#reset {
+    background-color: #ff3860;
 }
