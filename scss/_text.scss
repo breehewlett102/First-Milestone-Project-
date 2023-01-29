@@ -1,0 +1,56 @@
+$secondary-color: #191970;
+$hover-color: #a432c3;
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    color: $secondary-color;
+    cursor: default;
+    background-color: $primary-color;
+}
+
+#title {
+    width: 200px;
+    justify-content: left;      
+    display: flex;
+    order: 0;
+    margin-left: 28.10px;
+}
+
+@mixin playButton {
+    &:hover{
+        color: $hover-color;
+    }
+    &{
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        order: 1;
+        @content
+    }
+}
+
+#play{
+    @include playButton;
+}
+
+#timer {
+    width: 250px;
+    display: flex;
+    justify-content: right;
+    order: 2;
+    margin-right: 28.10px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    color: $secondary-color;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 750px;
+}   
